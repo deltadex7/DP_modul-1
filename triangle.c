@@ -3,24 +3,26 @@
 
 int main(int argc, char const *argv[])
 {
-    int x, y;
+    int x;
     if (argc > 1)
     {
-        if (argc < 3)
+        if (argc < 2)
         {
-            printf("ERROR: there should be 0 or 2 arguments!");
+            printf("ERROR: there should be 0 or 1 arguments!");
             return 1;
         }
         
         x = atoi(argv[1]);
-        y = atoi(argv[2]);
     }
-    else scanf("%d%d", &x, &y);
+    else scanf("%d", &x);
 
-    for (int i = 0; i < x; ++i) {
-        for (int j = 0; j < y;) {
+    for (int i = x; i > 0; --i) {
+        for (int j = x; j < i; ++j)
+            printf("-");
+
+        for (int j = i; j > 0; ) {
             printf("*");
-            if (++j < y)
+            if (--j > 0)
             {
                 printf(" ");
             }
