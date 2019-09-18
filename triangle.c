@@ -17,8 +17,8 @@ int main(int argc, char const *argv[])
     else scanf("%d", &x);
 
     for (int i = x; i > 0; --i) {
-        for (int j = x; j < i; ++j)
-            printf("-");
+        for (int j = x - i; j > 0; --j)
+            printf(" ");
 
         for (int j = i; j > 0; ) {
             printf("*");
